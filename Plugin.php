@@ -18,7 +18,7 @@ class Plugin extends PluginBase
     {
         return [
             'name' => 'OctoTools',
-            'description' => 'Extending console commands',
+            'description' => 'Extending artisan commands',
             'author' => 'Alexandr Esaulov',
             'icon' => 'icon-leaf'
         ];
