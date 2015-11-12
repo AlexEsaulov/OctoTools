@@ -14,6 +14,7 @@ class Plugin extends PluginBase
      *
      * @return array
      */
+     
     public function pluginDetails()
     {
         return [
