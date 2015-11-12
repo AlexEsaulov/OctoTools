@@ -19,7 +19,7 @@ class Plugin extends PluginBase
         return [
             'name' => 'OctoTools',
             'description' => 'No description provided yet...',
-            'author' => 'esaulov',
+            'author' => 'Alexandr Esaulov',
             'icon' => 'icon-leaf'
         ];
     }
