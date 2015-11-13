@@ -48,7 +48,7 @@ class PluginMigration extends Command
         $migrationName = $this->argument('migrationName');
 
         if ($this->option('add-timestamp')) {
-            $migrationName .= '_' . time();
+            $migrationName = date('YmdHis') . '_' . $migrationName;
         }
 
         $replace = [

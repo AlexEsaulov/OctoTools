@@ -14,6 +14,6 @@ $ php artisan october:up
 ```console
 $ php artisan make:plugin:migration vendor.pluginName migrationName # added plugins/vendor.pluginName/updates/migration_name.php
 $ php artisan make:plugin:migration vendor.pluginName migrationName ModelName # added migration_name.php with Schema::table(...)
-$ php artisan make:plugin:migration vendor.pluginName migrationName ModelName --update-version # added to version.yaml
-$ php artisan make:plugin:migration vendor.pluginName migrationName ModelName --update-version --add-timestamp # added timestamp to migrationName
+$ php artisan make:plugin:migration vendor.pluginName migrationName ModelName --auto-version # added to version.yaml
+$ php artisan make:plugin:migration vendor.pluginName migrationName ModelName --auto-version --add-timestamp # added timestamp to migrationName
 ```
