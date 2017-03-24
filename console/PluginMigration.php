@@ -52,9 +52,9 @@ class PluginMigration extends Command
         }
 
         $replace = [
-            '{{studly_author}}' => studly_case($parts[0]),
-            '{{studly_plugin}}' => studly_case($parts[1]),
-            '{{studly_migration_name}}' => studly_case($migrationName)
+            '{{studly_author}}'         => studly_case($parts[0]),
+            '{{studly_plugin}}'         => studly_case($parts[1]),
+            '{{studly_migration_name}}' => studly_case($migrationName),
         ];
 
 
@@ -71,6 +71,7 @@ class PluginMigration extends Command
                 throw new Exception('Model property $table is empty!');
             }
         }
+        $migrationDescription = ucfirst(join(' ', explode('_', trim($migrationName))));
 
         $fileName = $pluginDir . DIRECTORY_SEPARATOR . 'updates' . DIRECTORY_SEPARATOR . snake_case($migrationName) . '.php';
         if (File::exists($fileName)) {
@@ -96,7 +97,7 @@ class PluginMigration extends Command
 
             $versionContent = trim(File::get($versionFile));
 
-            $versionContent .= PHP_EOL . $newVersion . ':' . PHP_EOL . '  - Run table migrations' . PHP_EOL . '  - ' . basename($fileName) . PHP_EOL;
+            $versionContent .= PHP_EOL . $newVersion . ':' . PHP_EOL . '  - ' . $migrationDescription . PHP_EOL . '  - ' . basename($fileName) . PHP_EOL;
 
             File::put($versionFile, $versionContent);
         }
